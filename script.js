@@ -1,22 +1,13 @@
 function filterRange(arr, a, b) {
-    //return arr
-      //  .map(value => { if (value >= a && value <= b) return value });
-    //arr.splice()
+    let rangeArr = [];
+    //return arr.sort( (first, second) => first - second);
 
+    arr.map(value => {
+        if (value >= a && value <= b)
+            rangeArr.push(value);
+    });
 
-
-    let elem = arr.pop();
-
-    if (!elem)
-        return [];
-
-    if (elem >= a && elem <= b) {
-        let rangeArr = filterRange(arr, a, b);
-        rangeArr.push(elem);
-        return rangeArr;
-    }
-    else
-        return filterRange(arr, a, b);
+    return rangeArr;
 }
 
 let arr = [5, 3, 8, 1];
